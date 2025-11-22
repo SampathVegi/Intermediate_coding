@@ -1,28 +1,17 @@
-class Solution {
-    static{
-        for(int i=0; i<=500; i++)
-            moveZeroes(new int[]{});
-    }
+public class Solution{
     static public void moveZeroes(int[] nums) {
-    int i=0;
-    int j=0;
-    int count=0;
-    while(j<nums.length){
-        if(nums[j]==0){
-            count++;
-            j++;
-        }
-        else{
-            // nums[i]=nums[j];
-            // i++;
-            // j++;
-            nums[i++]=nums[j++];
-        }
-    }
-    for(int k=nums.length-count;k<nums.length;k++){
-        nums[k]=0;
-    }
-} 
+    int i = 0; // index to place next non-zero
 
-        
+    // Move non-zeros to the front
+    for (int j = 0; j < nums.length; j++) {
+        if (nums[j] != 0) {
+            nums[i++] = nums[j];
+        }
     }
+
+    // Fill remaining positions with zeros
+    while (i < nums.length) {
+        nums[i++] = 0;
+    }
+}
+}
