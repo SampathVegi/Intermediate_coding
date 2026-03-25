@@ -3,6 +3,5 @@ class Solution:
         a=''
         for i in s:
             if i.isalnum():
-                a+=i
-        a=a.lower()
+                a+=i.lower()
         return a==a[::-1]
